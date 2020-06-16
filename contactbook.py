@@ -9,18 +9,18 @@ conn = sqlite3.connect('contactdb.sqlite')
 cur = conn.cursor()
 
 #Make some fresh tables using executescript()
-# cur.executescript('''
-# DROP TABLE IF EXISTS Contacts;
+cur.executescript('''
+DROP TABLE IF EXISTS Contacts;
 
-# CREATE TABLE Contacts (
-#     id  INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
-#     fname    TEXT UNIQUE,
-#     lname    TEXT,
-#     ph_no  TEXT UNIQUE,
-#     email   TEXT UNIQUE
-# );
+CREATE TABLE Contacts (
+     id  INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+     fname    TEXT UNIQUE,
+     lname    TEXT,
+     ph_no  TEXT UNIQUE,
+     email   TEXT UNIQUE
+);
 
-# ''')
+''')
 
 
 class Sample(Frame):
